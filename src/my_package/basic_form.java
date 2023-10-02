@@ -62,6 +62,8 @@ public class basic_form extends javax.swing.JFrame {
         eLabel = new javax.swing.JLabel();
         fLabel = new javax.swing.JLabel();
         lLabel = new javax.swing.JLabel();
+        eLabel1 = new javax.swing.JLabel();
+        agLable = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(51, 255, 51));
@@ -127,6 +129,9 @@ public class basic_form extends javax.swing.JFrame {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 ageTextFieldKeyPressed(evt);
             }
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                ageTextFieldKeyReleased(evt);
+            }
         });
 
         emailIdTextField.addActionListener(new java.awt.event.ActionListener() {
@@ -144,17 +149,17 @@ public class basic_form extends javax.swing.JFrame {
         maleRadioB.setForeground(new java.awt.Color(255, 255, 255));
         maleRadioB.setSelected(true);
         maleRadioB.setText("Male");
-        maleRadioB.setActionCommand("MALE USER");
+        maleRadioB.setActionCommand("Male User");
 
         genderGroup.add(femaleRadioB);
         femaleRadioB.setForeground(new java.awt.Color(255, 255, 255));
         femaleRadioB.setText("Female");
-        femaleRadioB.setActionCommand("FEMALE USER");
+        femaleRadioB.setActionCommand("Female User");
 
         genderGroup.add(preferNotToSayRadioB);
         preferNotToSayRadioB.setForeground(new java.awt.Color(255, 255, 255));
         preferNotToSayRadioB.setText("Prefer Not To Say");
-        preferNotToSayRadioB.setActionCommand("PREFER NOT TO SAY USER");
+        preferNotToSayRadioB.setActionCommand("Prefer not to say");
 
         jLabel1.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
@@ -191,7 +196,7 @@ public class basic_form extends javax.swing.JFrame {
         uploadImageLabel.setForeground(new java.awt.Color(255, 255, 255));
         uploadImageLabel.setText("Upload Image");
 
-        browseImageButton.setText("Browse Image");
+        browseImageButton.setText("Browse Local Image");
         browseImageButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 browseImageButtonActionPerformed(evt);
@@ -206,6 +211,12 @@ public class basic_form extends javax.swing.JFrame {
 
         lLabel.setFont(new java.awt.Font("Dialog", 2, 12)); // NOI18N
         lLabel.setForeground(new java.awt.Color(204, 0, 0));
+
+        eLabel1.setFont(new java.awt.Font("Dialog", 2, 12)); // NOI18N
+        eLabel1.setForeground(new java.awt.Color(204, 0, 0));
+
+        agLable.setFont(new java.awt.Font("Dialog", 2, 12)); // NOI18N
+        agLable.setForeground(new java.awt.Color(255, 0, 0));
 
         javax.swing.GroupLayout mainPanelLayout = new javax.swing.GroupLayout(mainPanel);
         mainPanel.setLayout(mainPanelLayout);
@@ -244,15 +255,21 @@ public class basic_form extends javax.swing.JFrame {
                             .addComponent(typeComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(36, 36, 36)
                         .addComponent(imageLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(eLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(eLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 156, Short.MAX_VALUE)
                     .addGroup(mainPanelLayout.createSequentialGroup()
-                        .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(fLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 9, Short.MAX_VALUE)))
+                        .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(fLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 141, Short.MAX_VALUE)
+                            .addComponent(lLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 141, Short.MAX_VALUE)
+                            .addComponent(agLable, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
+            .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(mainPanelLayout.createSequentialGroup()
+                    .addGap(583, 583, 583)
+                    .addComponent(eLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGap(22, 22, 22)))
         );
         mainPanelLayout.setVerticalGroup(
             mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -272,7 +289,8 @@ public class basic_form extends javax.swing.JFrame {
                 .addGap(17, 17, 17)
                 .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(ageLabel)
-                    .addComponent(ageTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(ageTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(agLable))
                 .addGap(18, 18, 18)
                 .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(emaiIdlLabel)
@@ -305,6 +323,11 @@ public class basic_form extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(submitButton)
                 .addGap(25, 25, 25))
+            .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(mainPanelLayout.createSequentialGroup()
+                    .addGap(195, 195, 195)
+                    .addComponent(eLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(288, Short.MAX_VALUE)))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -367,7 +390,7 @@ public class basic_form extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Message is required");
         }
       
-        JOptionPane.showMessageDialog(this, firstname + " " + lastname + " " + age + " " + email + " " + gender + " " + type + " " + message, "User Details", HEIGHT);
+        JOptionPane.showMessageDialog(this, firstname + "\n" + lastname + "\n" + age + "\n" + email + "\n" + gender + "\n" + type + "\n" + message, "User Details", HEIGHT);
         
         //System.out.println(firstname + " " + lastname + " " + age + " " + email + " " + gender + " " + type + " " + message);
         
@@ -455,6 +478,19 @@ public class basic_form extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_lastNameTextFieldKeyReleased
 
+    private void ageTextFieldKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_ageTextFieldKeyReleased
+        // TODO add your handling code here:
+        String PATTERN = "^(1[0-1][0-9]|[1-9][0-9]|[1-9])$";
+        Pattern patt = Pattern.compile(PATTERN);
+        Matcher match = patt.matcher(ageTextField.getText());
+        if(!match.matches()){
+            agLable.setText("Age is Invalid");
+        }
+        else{
+            agLable.setText(null);
+        }
+    }//GEN-LAST:event_ageTextFieldKeyReleased
+
     /**
      * @param args the command line arguments
      */
@@ -491,10 +527,12 @@ public class basic_form extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel agLable;
     private javax.swing.JLabel ageLabel;
     private javax.swing.JTextField ageTextField;
     private javax.swing.JButton browseImageButton;
     private javax.swing.JLabel eLabel;
+    private javax.swing.JLabel eLabel1;
     private javax.swing.JLabel emaiIdlLabel;
     private javax.swing.JTextField emailIdTextField;
     private javax.swing.JLabel fLabel;

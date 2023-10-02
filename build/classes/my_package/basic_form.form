@@ -92,18 +92,26 @@
                           <Component id="imageLabel" min="-2" pref="107" max="-2" attributes="0"/>
                       </Group>
                   </Group>
-                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="eLabel" max="32767" attributes="0"/>
+                      <Component id="eLabel" pref="156" max="32767" attributes="0"/>
                       <Group type="102" attributes="0">
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="fLabel" min="-2" pref="141" max="-2" attributes="0"/>
-                              <Component id="lLabel" min="-2" pref="141" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                              <Component id="fLabel" pref="141" max="32767" attributes="0"/>
+                              <Component id="lLabel" pref="141" max="32767" attributes="0"/>
+                              <Component id="agLable" alignment="0" max="32767" attributes="0"/>
                           </Group>
-                          <EmptySpace min="0" pref="9" max="32767" attributes="0"/>
+                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
+              </Group>
+              <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="-2" pref="583" max="-2" attributes="0"/>
+                      <Component id="eLabel1" max="32767" attributes="0"/>
+                      <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
+                  </Group>
               </Group>
           </Group>
         </DimensionLayout>
@@ -128,12 +136,13 @@
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="ageLabel" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="ageTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="agLable" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="emaiIdlLabel" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="emailIdTextField" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="eLabel" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
+                      <Component id="eLabel" alignment="0" min="-2" pref="20" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
@@ -169,6 +178,13 @@
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Component id="submitButton" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
+              </Group>
+              <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="195" max="-2" attributes="0"/>
+                      <Component id="eLabel1" min="-2" pref="20" max="-2" attributes="0"/>
+                      <EmptySpace pref="288" max="32767" attributes="0"/>
+                  </Group>
               </Group>
           </Group>
         </DimensionLayout>
@@ -261,6 +277,7 @@
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ageTextFieldActionPerformed"/>
             <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="ageTextFieldKeyPressed"/>
+            <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="ageTextFieldKeyReleased"/>
           </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="emailIdTextField">
@@ -279,7 +296,7 @@
             </Property>
             <Property name="selected" type="boolean" value="true"/>
             <Property name="text" type="java.lang.String" value="Male"/>
-            <Property name="actionCommand" type="java.lang.String" value="MALE USER"/>
+            <Property name="actionCommand" type="java.lang.String" value="Male User"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JRadioButton" name="femaleRadioB">
@@ -291,7 +308,7 @@
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Female"/>
-            <Property name="actionCommand" type="java.lang.String" value="FEMALE USER"/>
+            <Property name="actionCommand" type="java.lang.String" value="Female User"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JRadioButton" name="preferNotToSayRadioB">
@@ -303,7 +320,7 @@
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Prefer Not To Say"/>
-            <Property name="actionCommand" type="java.lang.String" value="PREFER NOT TO SAY USER"/>
+            <Property name="actionCommand" type="java.lang.String" value="Prefer not to say"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel1">
@@ -379,7 +396,7 @@
         </Component>
         <Component class="javax.swing.JButton" name="browseImageButton">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Browse Image"/>
+            <Property name="text" type="java.lang.String" value="Browse Local Image"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="browseImageButtonActionPerformed"/>
@@ -414,6 +431,26 @@
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="0" green="0" red="cc" type="rgb"/>
+            </Property>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="eLabel1">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Dialog" size="12" style="2"/>
+            </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="0" green="0" red="cc" type="rgb"/>
+            </Property>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="agLable">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Dialog" size="12" style="2"/>
+            </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="0" green="0" red="ff" type="rgb"/>
             </Property>
           </Properties>
         </Component>
