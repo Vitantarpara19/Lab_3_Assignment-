@@ -2,7 +2,6 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-
 package my_package;
 
 import java.awt.Image;
@@ -12,18 +11,19 @@ import java.util.regex.*;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
 import javax.swing.filechooser.FileNameExtensionFilter;
+
 /**
  *
  * @author Lenovo
  */
 public class basic_form extends javax.swing.JFrame {
-    
+
     /**
      * Creates new form basic_form
      */
     public basic_form() {
         // Set up the main frame
-        
+
         initComponents();
     }
 
@@ -374,27 +374,27 @@ public class basic_form extends javax.swing.JFrame {
         String gender = genderGroup.getSelection().getActionCommand();
         String type = typeComboBox.getSelectedItem().toString();
         String message = messageTextField.getText();
-        
-        if(firstname.equals("")){
+
+        if (firstname.equals("")) {
             JOptionPane.showMessageDialog(null, "First name is required");
         }
-        if(lastname.equals("")){
+        if (lastname.equals("")) {
             JOptionPane.showMessageDialog(null, "Last name is required");
         }
-        if(age.equals("")){
+        if (age.equals("")) {
             JOptionPane.showMessageDialog(null, "Age is required");
         }
-        if(email.equals("")){
+        if (email.equals("")) {
             JOptionPane.showMessageDialog(null, "Email Id is required");
         }
-        if(message.equals("")){
+        if (message.equals("")) {
             JOptionPane.showMessageDialog(null, "Message is required");
         }
-      
+        
         JOptionPane.showMessageDialog(this, firstname + "\n" + lastname + "\n" + age + "\n" + email + "\n" + gender + "\n" + type + "\n" + message, "User Details", HEIGHT);
-        
+
         //System.out.println(firstname + " " + lastname + " " + age + " " + email + " " + gender + " " + type + " " + message);
-        
+
     }//GEN-LAST:event_submitButtonActionPerformed
 
     private void firstNameTextFieldKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_firstNameTextFieldKeyReleased
@@ -402,32 +402,30 @@ public class basic_form extends javax.swing.JFrame {
         String PATTERN = "^[a-zA-Z0-9]{0,30}$";
         Pattern patt = Pattern.compile(PATTERN);
         Matcher match = patt.matcher(firstNameTextField.getText());
-        if(!match.matches()){
+        if (!match.matches()) {
             fLabel.setText("First name is Invalid");
-        }
-        else{
+        } else {
             fLabel.setText(null);
         }
-        
+
     }//GEN-LAST:event_firstNameTextFieldKeyReleased
 
     private void firstNameTextFieldKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_firstNameTextFieldKeyPressed
         // TODO add your handling code here:
-        
+
     }//GEN-LAST:event_firstNameTextFieldKeyPressed
 
     private void lastNameTextFieldKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_lastNameTextFieldKeyPressed
         // TODO add your handling code here:
-        
+
     }//GEN-LAST:event_lastNameTextFieldKeyPressed
 
     private void ageTextFieldKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_ageTextFieldKeyPressed
         // TODO add your handling code here:
         char c = evt.getKeyChar();
-        if(Character.isDigit(c) || Character.isISOControl(c)){
+        if (Character.isDigit(c) || Character.isISOControl(c)) {
             ageTextField.setEditable(true);
-        }
-        else{
+        } else {
             ageTextField.setEditable(false);
         }
     }//GEN-LAST:event_ageTextFieldKeyPressed
@@ -439,16 +437,16 @@ public class basic_form extends javax.swing.JFrame {
         FileNameExtensionFilter fnef = new FileNameExtensionFilter("IMAGES", "png", "jpg", "jpeg");
         browseImageFile.addChoosableFileFilter(fnef);
         int showOpenDialogue = browseImageFile.showOpenDialog(null);
-         
+
         if (showOpenDialogue == JFileChooser.APPROVE_OPTION) {
             File selectedImageFile = browseImageFile.getSelectedFile();
             String selectedImagePath = selectedImageFile.getAbsolutePath();
             JOptionPane.showMessageDialog(null, selectedImagePath);
             //Display image on jlable
             ImageIcon ii = new ImageIcon(selectedImagePath);
-//            Resize image to fit jlabel
+            //Resize image to fit jlabel
             Image image = ii.getImage().getScaledInstance(imageLabel.getWidth(), imageLabel.getHeight(), Image.SCALE_SMOOTH);
-             
+
             imageLabel.setIcon(new ImageIcon(image));
         }
     }//GEN-LAST:event_browseImageButtonActionPerformed
@@ -458,10 +456,9 @@ public class basic_form extends javax.swing.JFrame {
         String PATTERN = "^[a-zA-Z0-9]{0,30}[@][a-zA-z0-9]{0,10}[.][a-zA-Z]{0,5}$";
         Pattern patt = Pattern.compile(PATTERN);
         Matcher match = patt.matcher(emailIdTextField.getText());
-        if(!match.matches()){
+        if (!match.matches()) {
             eLabel.setText("Email is invalid");
-        }
-        else{
+        } else {
             eLabel.setText(null);
         }
     }//GEN-LAST:event_emailIdTextFieldKeyReleased
@@ -471,10 +468,9 @@ public class basic_form extends javax.swing.JFrame {
         String PATTERN = "^[a-zA-Z0-9]{0,30}$";
         Pattern patt = Pattern.compile(PATTERN);
         Matcher match = patt.matcher(lastNameTextField.getText());
-        if(!match.matches()){
+        if (!match.matches()) {
             lLabel.setText("Last name is Invalid");
-        }
-        else{
+        } else {
             lLabel.setText(null);
         }
     }//GEN-LAST:event_lastNameTextFieldKeyReleased
@@ -484,10 +480,9 @@ public class basic_form extends javax.swing.JFrame {
         String PATTERN = "^(1[0-1][0-9]|[1-9][0-9]|[1-9])$";
         Pattern patt = Pattern.compile(PATTERN);
         Matcher match = patt.matcher(ageTextField.getText());
-        if(!match.matches()){
+        if (!match.matches()) {
             agLable.setText("Age is Invalid");
-        }
-        else{
+        } else {
             agLable.setText(null);
         }
     }//GEN-LAST:event_ageTextFieldKeyReleased
@@ -557,4 +552,5 @@ public class basic_form extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> typeComboBox;
     private javax.swing.JLabel uploadImageLabel;
     // End of variables declaration//GEN-END:variables
+String selectedImagePathshow;
 }
